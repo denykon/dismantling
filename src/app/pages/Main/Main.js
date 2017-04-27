@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import React, {Component} from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 import {Header} from '../../components/Header/Header';
 import {Footer} from '../../components/Footer/Footer';
@@ -11,12 +11,14 @@ import s from './main.scss';
 export class Main extends Component {
   render() {
     return (
-      <section className="main">
-        <Header/>
+      <BrowserRouter>
+        <section className="main">
+          <Header/>
           <Route path="/catalog" component={Catalog}/>
           <Route path="/about" component={About}/>
-        <Footer/>
-      </section>
+          <Footer/>
+        </section>
+      </BrowserRouter>
     );
   }
 }
