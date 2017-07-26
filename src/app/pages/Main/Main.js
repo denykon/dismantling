@@ -16,6 +16,9 @@ export class Main extends Component {
           <Header/>
           <Route path="/catalog" component={Catalog}/>
           <Route path="/about" component={About}/>
+          {/*<iframe src="http://localhost:63342"/>*/}
+          {/*<iframe scrolling="no" width="300" height="200" src="http://tut.by/"/>*/}
+          {/*<iframe scrolling="no" width="300" height="200" src="https://habrahabr.ru/"/>*/}
           <Footer/>
         </section>
       </BrowserRouter>

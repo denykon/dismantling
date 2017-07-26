@@ -1,3 +1,23 @@
 footer {
-  background-image: url('../../img/100.png');
+  will-change: transform;
+  section {
+    display: flex;
+    flex-direction: column;
+    //background-image: url('../../img/100.png');
+    .left {
+      border: 1px solid red;
+      height: 60px;
+    }
+    .right {
+      border: 1px solid green;
+      height: 50px;
+    }
+    .center {
+      border: 1px solid blue;
+      flex-grow: 2;
+    }
+    .next {
+
+    }
+  }
 }
