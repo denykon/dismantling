@@ -1,7 +1,7 @@
 const DEBUG = process.env.NODE_ENV !== 'prod';
 
 console.log('------------------');
-console.log(process.env.NODE_ENV);
+console.log(DEBUG);
 console.log('------------------');
 
 let webpack = require('webpack');
