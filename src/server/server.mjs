@@ -1,11 +1,9 @@
-// src/server.js
-
 import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
-import { match, RouterContext } from 'react-router';
+import { renderToString } from 'react-router-dom';
+import { match, RouterContext } from 'react-router-dom';
 import routes from './routes';
 import NotFoundPage from './components/NotFoundPage';
 
