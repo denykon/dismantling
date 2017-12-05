@@ -34,8 +34,3 @@ export class Older extends Component {
     );
   }
 }
-
-Older.propTypes = {
-  name: React.PropTypes.string,
-  initialAge: React.PropTypes.number
-};

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
-import q from './style.scss';
+import style from './style.scss';
 
 export class Menu extends Component {
   render() {
@@ -17,7 +17,3 @@ export class Menu extends Component {
     );
   }
 }
-
-Menu.propTypes = {
-  list: React.PropTypes.object
-};
