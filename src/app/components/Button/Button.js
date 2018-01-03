@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 
 export class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
   render() {
-    <button>{this.props.text}</button>
+    return (
+      <button onClick={this.handleClick}>
+        {`${this.props.text} ${this.state.isToggleOn ? 'ON' : 'OFF'}`}
+      </button>
+    );
   }
 }

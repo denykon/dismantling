@@ -12,7 +12,7 @@ export class Footer extends Component {
 
   componentDidMount() {
     let footer = this;
-    return fetch('../app/data/data.json').then(function(resp) {
+    return fetch('./app/data/data.json').then(function(resp) {
       resp.json().then(function(data) {
         console.log(data.users.tom);
 

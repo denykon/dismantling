@@ -1,24 +1,23 @@
-const DEBUG = process.env.NODE_ENV !== 'prod';
-
-console.log('------------------');
-console.log(DEBUG);
-console.log('------------------');
-
 let webpack = require('webpack');
 let path = require('path');
-
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const DOCS_DIR = path.resolve(__dirname, 'docs');
 const SRC_DIR = path.resolve(__dirname, 'src');
+const isPROD = process.env.NODE_ENV === 'prod';
+
+console.log('------------------');
+console.log(isPROD);
+console.log(process.env.NODE_ENV);
+console.log('------------------');
 
 let plugins = [
   new ExtractTextPlugin('style.css')
 ];
 
 let config = {
-  devtool: DEBUG ? 'inline-sourcemap' : false,
+  devtool: !isPROD ? 'inline-sourcemap' : false,
   devServer: {
     historyApiFallback: true,
     port: 9090
@@ -40,7 +39,7 @@ let config = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['react', 'es2015', 'stage-2']
+              presets: ['react', 'env', 'stage-2']
             }
           }
         ]
@@ -66,7 +65,7 @@ let config = {
       }
     ]
   },
-  plugins: DEBUG ? plugins : [
+  plugins: !isPROD ? plugins : [
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false}),

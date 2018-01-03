@@ -1,8 +1,3 @@
-$bootstrap-sass-asset-helper: true;
-@import '~bootswatch/darkly/_variables';
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import '~bootswatch/darkly/_bootswatch';
-
 .btn {
   &:focus {
     outline: 0;
